@@ -1,0 +1,17 @@
+import type { Metadata } from "next";
+import { LegalPage } from "../legal-page";
+
+export const metadata: Metadata = { title: "Privacy" };
+
+export default function PrivacyPage() {
+  return <LegalPage eyebrow="Privacy by design" title="Privacy Policy">
+    <h2>What MIVO collects</h2><p>We collect an anonymous username, password hash and salt, birth date for the 18+ gate, gender, selected vibes, privacy preferences, coarse region or city only when you opt in, optional photo or contact detail, messages, consent decisions, blocks, reports, subscription state, sessions, presence heartbeats, and limited security events. MIVO does not ask for your real name, public email, public phone number, exact GPS location, or public device identifier.</p>
+    <h2>Why it is used</h2><p>Data is used to authenticate you, match compatible online people, deliver messages, enforce mutual consent, preserve your Connections, process verified entitlements, prevent abuse, review reports, and maintain service security. Private chat contents are never copied into product analytics.</p>
+    <h2>Identity Layers</h2><p>Birth date, coarse location, photo keys, and contact details are stored separately from the initial anonymous profile. The client receives only the fields belonging to a layer after the server records approval from both room members. A client request cannot override that rule.</p>
+    <h2>Retention</h2><p>For conversations, the shorter of both members’ choices applies: end of chat, 24 hours, 7 days, or Keep. Keep creates a Connection only if both people choose it. Expired messages are overwritten and marked deleted during maintenance. A message or room snapshot attached to a safety report is retained for up to 180 days so moderators can investigate; legal or active-enforcement needs may require a longer hold. Session records expire after 30 days unless revoked earlier.</p>
+    <h2>Providers</h2><p>Hosting and database providers process encrypted traffic and stored records to run MIVO. When configured, Ably transports narrowly scoped realtime events, Stripe processes payments, and private object storage holds optional photos. Payment card details are handled by the payment provider and are not stored in the MIVO database. Optional verification remains disabled unless a reviewed provider, consent, and retention configuration are present.</p>
+    <h2>Your controls</h2><p>You can hide age, decline every Identity Layer, disable location sharing, choose read-receipt and reconnect settings, block users, revoke other sessions, rotate recovery codes, download your account data, and delete your account. Deletion removes credentials and directly identifying optional fields, ends rooms, and anonymizes records that must remain for integrity or safety.</p>
+    <h2>Security</h2><p>Passwords use server-side PBKDF2-SHA256 with unique salts. Sessions use HttpOnly, Secure, SameSite cookies; public IDs differ from internal database IDs. Access checks, origin validation, rate limits, content escaping, private storage, and restrictive browser headers protect the service. No online system can eliminate all risk, so report suspicious behavior promptly.</p>
+    <h2>Questions</h2><p>Use Data & Privacy in Profile for export or deletion. Use the in-chat Shield for a report that needs evidence preservation. Emergency threats should also be reported to the appropriate local authority.</p>
+  </LegalPage>;
+}
